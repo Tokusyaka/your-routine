@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-  </head>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-      <div id="example" class="py-5 navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/">Your Routine</a>
-        </div>
-
-        <div class="navbar-end">
-          <a class="navbar-item" href="/users/sign_in">ログイン</a>
-          <a class="navbar-item" href="/users/sign_up">新規登録</a>
-        </div>
-      </div>
-  </nav>
-
+<%= render partial: 'shared/header' %>
+  <div class="content m-6 has-text-centered">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -40,15 +21,5 @@
         <%= f.submit "ログイン" %>
       </div>
     <% end %>
-
-  <footer class="footer navbar is-fixed-bottom">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/">Your Routine</a>
-      </div>
-
-      <div class="navbar-end">
-        <a class="navbar-item" href="#">利用規約</a>
-        <a class="navbar-item" href="#">プライバシーポリシー</a>
-      </div>
-  </footer>
-</html>
+  </div>
+<%= render partial: 'shared/footer'%>

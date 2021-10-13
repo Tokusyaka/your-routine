@@ -1,6 +1,12 @@
 <%= render partial: 'shared/header' %>
-
-<table class="table">
+<div class="content m-6">
+  <h2>Good Job!!</h2>
+  <p>トレーニングお疲れ様でした。</p>
+  <p>しっかり体を休めて、また明日も頑張りましょう♪</p>
+</div>
+<br>
+<br>
+<table class="table ml-6">
   <thead>
     <tr>
       <th>トレーニング名</th>
@@ -12,7 +18,7 @@
     <tr>
       <td><%= @trainings.title%></td>
       <td><%= @trainings.content%></td>
-      <td><%=link_to "削除", training_path(@trainings.id), method: :delete , data: {confirm:"削除しますか?"} ,:class=>"btn03"%></td>
+      <td><%=link_to "削除", training_path(@trainings.id), method: :delete , data: {confirm:"削除しますか?"} ,:class=>"button is-danger"%></td>
     <tr>
   </tbody>
 </table>
