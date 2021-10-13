@@ -1,0 +1,18 @@
+<%= render partial: 'shared/header' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>トレーニング名</th>
+      <th>トレーニング内容</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @trainings.title%></td>
+      <td><%= @trainings.content%></td>
+      <td><%=link_to "削除", training_path(@trainings.id), method: :delete , data: {confirm:"削除しますか?"} ,:class=>"btn03"%></td>
+    <tr>
+  </tbody>
+</table>

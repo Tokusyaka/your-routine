@@ -1,0 +1,53 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div id="example" class="py-5 navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">Your Training</a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= link_to "マイページ", trainings_path %>
+        <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="columns">
+  <div class="column is-three-quarters">
+    <%= month_calendar events: @trainings do |date, trainings| %>
+      <%= date.day %>
+      <% trainings.each do |training| %>
+        <div>
+          <%= link_to training.title, training_path(training.id) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="column">
+    <div class="field">
+        <%= form_with model: @user, url: "/posts", method: :post, local: true do |f|%>
+          <%= render partial: 'shared/error_messages_training', model: f.object%>
+
+          <label class="label">タイトル</label>
+          <%= f.text_field :title %>
+          <label class="label">トレーニング内容</label>
+          <%= f.text_area :content%>
+          <label class="label">トレーニングをした日</label>
+          <%= f.date_select :start_time%>
+          <%= f.submit '記録する'%>
+        <% end %>
+    </div>
+  </div>
+</div>
