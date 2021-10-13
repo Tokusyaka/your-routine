@@ -38,8 +38,6 @@
   <div class="column">
     <div class="field">
         <%= form_with model: @user, url: "/posts", method: :post, local: true do |f|%>
-          <%= render partial: 'shared/error_messages_training', model: f.object%>
-
           <label class="label">タイトル</label>
           <%= f.text_field :title %>
           <label class="label">トレーニング内容</label>

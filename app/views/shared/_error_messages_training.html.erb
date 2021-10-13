@@ -1,9 +1,0 @@
-<% if @training.errors.any? %>
-  <div class="-alert">
-    <ul>
-      <% @training.errors.full_messages.each do |message| %>
-      <li class='-message'><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
