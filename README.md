@@ -11,6 +11,13 @@ Your Routine
 
 このことから自身でトレーニング内容を把握し、記録することで今までの努力の結果が見て確認できるようになれば、これらのことが解決できるのではないかと考え、今回のアプリ開発に至った。
 
+# URL
+- https://your-routine.herokuapp.com/
+## テスト用アカウント
+- ユーザー名: yamada
+- email: yahoo@test.com
+- password: 11111a
+
 # DEMO
 ## TOPページ
 ![Your Routine TOPページ](https://i.gyazo.com/d37916cc7288f431b839bb43dc639e4e.png)
