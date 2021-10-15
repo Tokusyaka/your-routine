@@ -38,8 +38,8 @@ class TrainingsController < ApplicationController
     redirect_to trainings_path
   end
 
-
   private
+
   def training_memo
     params.permit(:start_time, :title, :content, :user_id)
   end

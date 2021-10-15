@@ -13,7 +13,9 @@ Your Routine
 
 # URL
 - https://your-routine.herokuapp.com/
-## テスト用アカウント
+## 本番環境
+- Basic認証: training
+- password: 9291718
 - ユーザー名: yamada
 - email: yahoo@test.com
 - password: 11111a
@@ -26,12 +28,19 @@ Your Routine
 ## トレーニング詳細ページ
 ![トレーニング詳細ページ](https://i.gyazo.com/c4164036b0dc922e98c6843dceb466b1.png)
 
+# 工夫したポイント
+- 初めてCSSフレームワークを使用して、サイトのレイアウトを作成したこと。
+- トレーニングの詳細の内容を確認できるように、テーブルで表示させたこと。
+- カレンダー内に予定を表示させ、そのリンクから詳細を確認できるようにしたこと。
+
 # 実装予定の内容
 - ツイート機能
 - コメント機能
 - タイマー機能
 
 # テーブル設計
+## ER図
+![ER図](.drawio.png)
 
 ## users テーブル
 
@@ -57,3 +66,13 @@ Your Routine
 
 ### Association
 - belongs_to :user
+
+
+# 開発環境
+- フロントエンド: HTML, CSS(Bulma), simple_calendar(2.4)
+- バックエンド: Ruby on Rails(6.0.0), Ruby(2.6.5)
+- テスト: Rspec
+- Linter: Rubocop
+- データベース: MySQL(5.6.50), Sequel Pro
+- インフラ: Heroku
+- タスク管理: GitHub

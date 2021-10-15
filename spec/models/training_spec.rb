@@ -4,7 +4,7 @@ RSpec.describe Training, type: :model do
   before do
     @training = FactoryBot.build(:training)
   end
-  
+
   describe 'トレーニング内容記録' do
     context 'トレーニングの内容を記録できる時' do
       it '入力項目が全て入力できている時' do
